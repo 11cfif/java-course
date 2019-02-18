@@ -43,7 +43,6 @@ public class Measurable2D {
         public String name;
 
 
-
         public Shape(String name) {
             this.name = name;
         }
@@ -84,7 +83,7 @@ public class Measurable2D {
 
         @Override
         public double sqareShape() {
-            return  Math.PI * Math.pow(this.radius, 2);
+            return Math.PI * Math.pow(this.radius, 2);
         }
 
 
@@ -99,7 +98,6 @@ public class Measurable2D {
         }
 
     }
-
 
 
     public class Rectangle extends Shape implements iShape {
@@ -166,13 +164,13 @@ public class Measurable2D {
 
         public Sphere(String name, double radius) {
             super(name);
-            this.radius =radius;
+            this.radius = radius;
 
         }
 
         @Override
         public double sqareShape() {
-           return  4 * Math.PI * Math.pow(this.radius, 2);
+            return 4 * Math.PI * Math.pow(this.radius, 2);
         }
 
 
@@ -183,7 +181,7 @@ public class Measurable2D {
 
         @Override
         public double volumeShape() {
-            return 4/3*Math.PI*Math.pow(this.radius,3);
+            return 4 / 3 * Math.PI * Math.pow(this.radius, 3);
         }
 
     }
@@ -194,24 +192,24 @@ public class Measurable2D {
 
         public Cube(String name, double side) {
             super(name);
-            this.side =side;
+            this.side = side;
 
         }
 
         @Override
         public double sqareShape() {
-            return  this.side*this.side*6;
+            return this.side * this.side * 6;
         }
 
 
         @Override
         public double perimeter() {
-            return 12*this.side;
+            return 12 * this.side;
         }
 
         @Override
         public double volumeShape() {
-            return Math.pow(this.side,3);
+            return Math.pow(this.side, 3);
         }
 
     }
