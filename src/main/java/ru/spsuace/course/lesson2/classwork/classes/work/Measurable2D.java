@@ -70,7 +70,6 @@ public interface Measurable2D {
 
         public Rectangle(String name, double sideA, double sideB) {
             super(name, sideA, sideB);
-
         }
 
         @Override
@@ -89,7 +88,6 @@ public interface Measurable2D {
 
         public Square(String name, double sideA) {
             super(name, sideA);
-
         }
 
         @Override
@@ -107,7 +105,6 @@ public interface Measurable2D {
 
         public Circle(String name, double radius) {
             super(name, radius);
-
         }
 
         @Override
@@ -129,7 +126,6 @@ public interface Measurable2D {
             super(name);
             this.sideA = sideA;
             this.sideB = sideB;
-
         }
 
         @Override
