@@ -24,52 +24,47 @@ public interface Measurable2D {
      *
      * @return
      */
-    default double perimeter() {
-        System.out.println("Периметр этой фигуры посчитать невозможно");
-        return 0;
-    }
+    double perimeter();
 
     public interface Measurable3D extends Measurable2D {
         double volume();
     }
 
-    public static abstract class Sheep {
+    public static abstract class Shape {
         private String name;
 
-        public Sheep(String name) {
+        public Shape(String name) {
             this.name = name;
         }
     }
 
-    public static abstract class RectangularSheep extends Sheep {
+    public static abstract class RectangularShape extends Shape {
         public double sideA;
-        public double sideB;
 
-        public RectangularSheep(String name, double sideA) {
+
+        public RectangularShape(String name, double sideA) {
             super(name);
             this.sideA = sideA;
         }
 
-        public RectangularSheep(String name, double sideA, double sideB) {
-            super(name);
-            this.sideA = sideA;
-            this.sideB = sideB;
-        }
+
     }
 
-    public static abstract class SphericalSheep extends Sheep {
+    public static abstract class SphericalShape extends Shape {
         public double radius;
 
-        public SphericalSheep(String name, double radius) {
+        public SphericalShape(String name, double radius) {
             super(name);
             this.radius = radius;
         }
     }
 
-    public class Rectangle extends RectangularSheep implements Measurable2D {
+    public class Rectangle extends RectangularShape implements Measurable2D {
+        public double sideB;
 
         public Rectangle(String name, double sideA, double sideB) {
-            super(name, sideA, sideB);
+            super(name, sideA);
+            this.sideB = sideB;
         }
 
         @Override
@@ -83,11 +78,10 @@ public interface Measurable2D {
         }
     }
 
-    public class Square extends RectangularSheep implements Measurable2D {
-        public double side;
+    public class Square extends RectangularShape implements Measurable2D {
 
-        public Square(String name, double sideA) {
-            super(name, sideA);
+        public Square(String name, double side) {
+            super(name, side);
         }
 
         @Override
@@ -101,7 +95,7 @@ public interface Measurable2D {
         }
     }
 
-    public class Circle extends SphericalSheep implements Measurable2D {
+    public class Circle extends SphericalShape implements Measurable2D {
 
         public Circle(String name, double radius) {
             super(name, radius);
@@ -118,7 +112,7 @@ public interface Measurable2D {
         }
     }
 
-    public class RightTriangle extends Sheep implements Measurable2D {
+    public class RightTriangle extends Shape implements Measurable2D {
         public double sideA;
         public double sideB;
 
@@ -139,7 +133,7 @@ public interface Measurable2D {
         }
     }
 
-    public class Sphere extends SphericalSheep implements Measurable3D {
+    public class Sphere extends SphericalShape implements Measurable3D {
 
 
         public Sphere(String name, double radius) {
@@ -155,15 +149,20 @@ public interface Measurable2D {
         public double volume() {
             return 4 / 3 * Math.PI * Math.pow(radius, 3);
         }
+
+        @java.lang.Override
+        public double perimeter() {
+            System.out.println("Периметр этой фигуры посчитать невозможно");
+            return 0;
+        }
     }
 
 
-    public class Cube extends Sheep implements Measurable3D {
-        public double side;
+    public class Cube extends RectangularShape implements Measurable3D {
+
 
         public Cube(String name, double side) {
-            super(name);
-            this.side = side;
+            super(name, side);
         }
 
         @Override
