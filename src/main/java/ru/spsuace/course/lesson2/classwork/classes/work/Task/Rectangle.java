@@ -1,12 +1,10 @@
 package ru.spsuace.course.lesson2.classwork.classes.work.Task;
 
-public class Rectangle extends Shape implements Perimeterable{
-    double sideA;
+public class Rectangle extends Square {
     double sideB;
 
     public Rectangle(String color, double sideA, double sideB) {
-        super(color);
-        this.sideA = sideA;
+        super(color, sideA);
         this.sideB = sideB;
     }
 

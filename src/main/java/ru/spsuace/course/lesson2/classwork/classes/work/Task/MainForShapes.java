@@ -20,6 +20,6 @@ public class MainForShapes {
         System.out.println(square.color + " Square: perimeter= " + square.perimeter() + ", area= " + square.area());
 
         Triangle triangle = new Triangle("White", 4, 10);
-        System.out.println("Triangle: perimeter= " + triangle.perimeter() + ", area= " + triangle.area());
+        System.out.println(triangle.color + " Triangle: perimeter= " + triangle.perimeter() + ", area= " + triangle.area());
     }
 }

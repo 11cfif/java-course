@@ -1,22 +1,22 @@
 package ru.spsuace.course.lesson2.classwork.classes.work.Task;
 
-public class Square extends Shape implements Perimeterable{
+public class Square extends Shape implements Perimeterable {
 
-    double side;
+    double sideA;
 
     public Square(String color, double side) {
         super(color);
-        this.side = side;
+        this.sideA = side;
     }
 
     @Override
     public double perimeter() {
-        return side * 4;
+        return sideA * 4;
     }
 
     @Override
     public double area() {
-        return Math.pow(side, 2);
+        return Math.pow(sideA, 2);
     }
 
 
