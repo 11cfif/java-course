@@ -39,7 +39,7 @@ public interface Measurable2D {
     }
 
     public static abstract class RectangularShape extends Shape {
-        public double sideA;
+        private double sideA;
 
 
         public RectangularShape(String name, double sideA) {
@@ -51,7 +51,7 @@ public interface Measurable2D {
     }
 
     public static abstract class SphericalShape extends Shape {
-        public double radius;
+        private double radius;
 
         public SphericalShape(String name, double radius) {
             super(name);
@@ -60,7 +60,7 @@ public interface Measurable2D {
     }
 
     public class Rectangle extends RectangularShape implements Measurable2D {
-        public double sideB;
+        private double sideB;
 
         public Rectangle(String name, double sideA, double sideB) {
             super(name, sideA);
@@ -113,8 +113,8 @@ public interface Measurable2D {
     }
 
     public class RightTriangle extends Shape implements Measurable2D {
-        public double sideA;
-        public double sideB;
+        private double sideA;
+        private double sideB;
 
         public RightTriangle(String name, double sideA, double sideB) {
             super(name);
@@ -150,7 +150,7 @@ public interface Measurable2D {
             return 4 / 3 * Math.PI * Math.pow(radius, 3);
         }
 
-        @java.lang.Override
+        @Override
         public double perimeter() {
             System.out.println("Периметр этой фигуры посчитать невозможно");
             return 0;
