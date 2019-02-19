@@ -31,7 +31,7 @@ public interface Measurable2D {
     }
 
     public static abstract class Shape {
-        private String name;
+        protected String name;
 
         public Shape(String name) {
             this.name = name;
@@ -39,7 +39,7 @@ public interface Measurable2D {
     }
 
     public static abstract class RectangularShape extends Shape {
-        private double sideA;
+        protected double sideA;
 
 
         public RectangularShape(String name, double sideA) {
@@ -51,7 +51,7 @@ public interface Measurable2D {
     }
 
     public static abstract class SphericalShape extends Shape {
-        private double radius;
+        protected double radius;
 
         public SphericalShape(String name, double radius) {
             super(name);
