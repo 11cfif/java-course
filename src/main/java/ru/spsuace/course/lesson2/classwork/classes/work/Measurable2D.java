@@ -25,8 +25,6 @@ public interface Measurable2D {
      *
      * @return
      */
-    default double perimeter() {
-        throw new UnsupportedOperationException("Invalid operation for Ball.");
-    }
+    double perimeter();
 }
 
