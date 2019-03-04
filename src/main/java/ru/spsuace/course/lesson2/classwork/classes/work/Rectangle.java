@@ -7,7 +7,7 @@ public class Rectangle extends TwoVarFigure implements Measurable2D {
 
     @Override
     public double measure2D() {
-        return Math.pow(a, 2);
+        return a * b;
     }
 
     @Override

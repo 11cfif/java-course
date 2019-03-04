@@ -1,10 +1,10 @@
 package ru.spsuace.course.lesson2.classwork.classes.work;
 
-public abstract class TwoVarFigure {
-    protected double a, b;
+public abstract class TwoVarFigure extends OneVarFigure {
+    protected double  b;
 
     TwoVarFigure(double a, double b) {
-        this.a = a;
+        super(a);
         this.b = b;
     }
 

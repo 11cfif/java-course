@@ -12,7 +12,7 @@ public class Cube extends OneVarFigure implements Measurable2D, Volume {
 
     @Override
     public double volumeCalc() {
-        return Math.pow(a, 2);
+        return Math.pow(a, 3);
     }
 
     @Override

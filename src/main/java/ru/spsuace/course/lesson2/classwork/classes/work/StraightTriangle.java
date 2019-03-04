@@ -1,8 +1,8 @@
 package ru.spsuace.course.lesson2.classwork.classes.work;
 
-public class StraightTriangle extends ThreeVarFigure implements Measurable2D {
-    StraightTriangle(double a, double b, double c) {
-        super(a, b, c);
+public class StraightTriangle extends TwoVarFigure implements Measurable2D {
+    StraightTriangle(double a, double b) {
+        super(a, b);
     }
 
     @Override
@@ -12,6 +12,6 @@ public class StraightTriangle extends ThreeVarFigure implements Measurable2D {
 
     @Override
     public double perimeter() {
-        return a + b + c;
+        return a + b + Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
     }
 }
