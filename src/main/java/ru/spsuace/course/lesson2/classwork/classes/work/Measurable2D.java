@@ -29,7 +29,7 @@ public interface Measurable2D {
 
         protected int r;
 
-        Circle(int r) {
+        public Circle(int r) {
             this.r = r;
         }
 
@@ -48,7 +48,7 @@ public interface Measurable2D {
     public class Square implements Measurable2D {
         protected int a;
 
-        Square(int a) {
+        public Square(int a) {
             this.a = a;
         }
 
@@ -67,7 +67,7 @@ public interface Measurable2D {
     public class Rectangle extends Square {
         protected int b;
 
-        Rectangle(int a, int b) {
+        public Rectangle(int a, int b) {
             super(a);
             this.b = b;
         }
@@ -84,9 +84,9 @@ public interface Measurable2D {
     }
 
     //Прямоугольный треугольник
-    public class RightTriangle extends Rectangle{
+    public class RightTriangle extends Rectangle {
 
-        RightTriangle(int a, int b){
+        public RightTriangle(int a, int b) {
             super(a, b);
         }
 
@@ -101,24 +101,24 @@ public interface Measurable2D {
         }
     }
 
-    public interface Measurable3D extends Measurable2D{
+    public interface Measurable3D extends Measurable2D {
         double volume(); //Объем
     }
 
-    public class Ball extends Circle implements Measurable3D{
+    public class Ball extends Circle implements Measurable3D {
 
-        Ball(int r) {
+        public Ball(int r) {
             super(r);
         }
 
         @Override
         public double measure2D() {
-            return 0;
+            return 4 * Math.PI * Math.pow(r, 2);
         }
 
         @Override
-        public double perimeter() {
-            return 0;
+        public double perimeter() throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("The perimeter of the Ball does not exist");
         }
 
         @Override
@@ -128,8 +128,8 @@ public interface Measurable2D {
     }
 
 
-    public class Cube extends Square implements Measurable3D{
-        Cube(int a){
+    public class Cube extends Square implements Measurable3D {
+        public Cube(int a) {
             super(a);
         }
 
