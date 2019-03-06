@@ -12,6 +12,6 @@ public class Rectangle extends TwoVarFigure implements Measurable2D {
 
     @Override
     public double perimeter() {
-        return a + b;
+        return 2 * (a + b);
     }
 }

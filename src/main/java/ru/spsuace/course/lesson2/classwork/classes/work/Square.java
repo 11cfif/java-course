@@ -12,6 +12,6 @@ public class Square extends OneVarFigure implements Measurable2D {
 
     @Override
     public double perimeter() {
-        return a + a;
+        return 4 * a;
     }
 }
