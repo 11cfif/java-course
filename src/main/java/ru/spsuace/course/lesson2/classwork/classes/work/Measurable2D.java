@@ -16,7 +16,7 @@ public interface Measurable2D {
     double perimeter();
 
     public class Square implements Measurable2D {
-        private double a;
+        protected double a;
 
         Square(double a) {
             this.a = a;
@@ -34,7 +34,7 @@ public interface Measurable2D {
     }
 
     public class Circle implements Measurable2D {
-        private double r;
+        protected double r;
 
         Circle(double r) {
             this.r = r;
@@ -51,12 +51,11 @@ public interface Measurable2D {
         }
     }
 
-    public class Rectangle implements Measurable2D {
-        private double a;
-        private double b;
+    public class Rectangle extends Square {
+        protected double b;
 
         Rectangle(double a, double b) {
-            this.a = a;
+            super(a);
             this.b = b;
         }
 
@@ -71,13 +70,10 @@ public interface Measurable2D {
         }
     }
 
-    public class RightTriangle implements Measurable2D {
-        private double a;
-        private double b;
+    public class RightTriangle extends Rectangle {
 
         RightTriangle(double a, double b) {
-            this.a = a;
-            this.b = b;
+            super(a, b);
         }
 
         @Override

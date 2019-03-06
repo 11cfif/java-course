@@ -1,15 +1,12 @@
 package ru.spsuace.course.lesson2.classwork.classes.work;
 
-public interface Measurable3D {
+public interface Measurable3D extends Measurable2D {
     double measure3D();//Объем
 
-    double area();//Площадь поверхности
-
-    public class Cube implements Measurable3D {
-        private double a;
+    public class Cube extends Square implements Measurable3D {
 
         Cube(double a) {
-            this.a = a;
+            super(a);
         }
 
         @Override
@@ -18,16 +15,20 @@ public interface Measurable3D {
         }
 
         @Override
-        public double area() {
+        public double measure2D() {
             return 6 * Math.pow(a, 2);
+        }
+
+        @Override
+        public double perimeter() {
+            return 12 * a;
         }
     }
 
-    public class Round implements Measurable3D {
-        private double r;
+    public class Round extends Circle implements Measurable3D {
 
         Round(double r) {
-            this.r = r;
+            super(r);
         }
 
         @Override
@@ -36,8 +37,13 @@ public interface Measurable3D {
         }
 
         @Override
-        public double area() {
+        public double measure2D() {
             return 4 * Math.PI * Math.pow(r, 2);
+        }
+
+        @Override
+        public double perimeter() {
+            throw new UnsupportedOperationException("У шара не бывает периметра:)");
         }
     }
 }
