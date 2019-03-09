@@ -7,39 +7,39 @@ public interface Measurable3D {
     //Площадь поверхности
     double area();
 
-    public class Cube extends FigureOne implements Measurable3D{
+    public class Cube extends SingleParameterFigure implements Measurable3D {
 
-        Cube(double a){
+        Cube(double a) {
 
             super(a);
         }
 
         public double measure3D() {
 
-            return Math.pow(attribute1 ,3.);
+            return Math.pow(attribute1, 3);
         }
 
         public double area() {
 
-            return 6 * Math.pow(attribute1, 2.);
+            return 6 * Math.pow(attribute1, 2);
         }
     }
 
-    class Sphere extends FigureOne implements Measurable3D{
+    public class Sphere extends SingleParameterFigure implements Measurable3D {
 
-        Sphere(double r){
+        Sphere(double r) {
 
             super(r);
         }
 
         public double measure3D() {
 
-            return 4. / 3. * Math.PI * Math.pow(attribute1, 3.);
+            return 4.0 / 3.0 * Math.PI * Math.pow(attribute1, 3);
         }
 
         public double area() {
 
-            return 4 * Math.PI * Math.pow(attribute1, 2.);
+            return 4 * Math.PI * Math.pow(attribute1, 2);
         }
     }
 }

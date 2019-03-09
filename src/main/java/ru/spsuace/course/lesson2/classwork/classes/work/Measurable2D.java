@@ -1,13 +1,12 @@
 package ru.spsuace.course.lesson2.classwork.classes.work;
 
 /**
- *
  * Задание:
  * Сделать иерархию классов, в котором можно сделать измерять площадь поверзности, периметр и объем
  * (для него сделайте отдельный интерфейс). Фигуры, которые будут участвовать в измерении - квадрат, круг, прямоугольник,
  * прямой треугольник, шар, куб.
- *
- *
+ * <p>
+ * <p>
  * Интерфейс, который позволяет измерять площадь поверхности объектов и периметр
  */
 public interface Measurable2D {
@@ -15,26 +14,28 @@ public interface Measurable2D {
 
     /**
      * Площадь
+     *
      * @return
      */
     double measure2D();
 
     /**
      * Периметр
+     *
      * @return
      */
     double perimeter();
 
-    public class Square extends FigureOne implements Measurable2D{
+    public class Square extends SingleParameterFigure implements Measurable2D {
 
-        Square(double a){
+        Square(double a) {
 
             super(a);
         }
 
         public double measure2D() {
 
-            return Math.pow(attribute1, 2.);
+            return Math.pow(attribute1, 2);
         }
 
         public double perimeter() {
@@ -43,16 +44,16 @@ public interface Measurable2D {
         }
     }
 
-    public class Circle extends FigureOne implements Measurable2D{
+    public class Circle extends SingleParameterFigure implements Measurable2D {
 
-        Circle(double r){
+        Circle(double r) {
 
             super(r);
         }
 
         public double measure2D() {
 
-            return Math.PI * Math.pow(attribute1, 2.);
+            return Math.PI * Math.pow(attribute1, 2);
         }
 
         public double perimeter() {
@@ -61,9 +62,9 @@ public interface Measurable2D {
         }
     }
 
-    public class Rectangular extends FigureTwo implements Measurable2D{
+    public class Rectangular extends TwoParametersFigure implements Measurable2D {
 
-        Rectangular(double a, double b){
+        Rectangular(double a, double b) {
 
             super(a, b);
         }
@@ -79,9 +80,9 @@ public interface Measurable2D {
         }
     }
 
-    public class RightTriangle extends FigureTwo implements Measurable2D{
+    public class RightTriangle extends TwoParametersFigure implements Measurable2D {
 
-        RightTriangle(double a, double b){
+        RightTriangle(double a, double b) {
 
             super(a, b);
         }
@@ -93,7 +94,7 @@ public interface Measurable2D {
 
         public double perimeter() {
 
-            return attribute1 + attribute2 + Math.sqrt(Math.pow(attribute1, 2.) + Math.pow(attribute2, 2.));
+            return attribute1 + attribute2 + Math.sqrt(Math.pow(attribute1, 2) + Math.pow(attribute2, 2));
         }
     }
 }
