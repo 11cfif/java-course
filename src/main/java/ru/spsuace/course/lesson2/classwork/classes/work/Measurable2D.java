@@ -51,11 +51,11 @@ public interface Measurable2D {
         }
     }
 
-    public class Rectangle implements Measurable2D {
-        protected double a, b;
+    public class Rectangle extends Square implements Measurable2D {
+        protected double b;
 
         Rectangle(double a, double b) {
-            this.a = a;
+            super(a);
             this.b = b;
         }
 
