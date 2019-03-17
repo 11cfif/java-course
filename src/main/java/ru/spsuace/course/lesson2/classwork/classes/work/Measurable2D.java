@@ -9,10 +9,10 @@ package ru.spsuace.course.lesson2.classwork.classes.work;
 
 //Интерфейс, который позволяет измерять площадь поверхности объектов и периметр
 public interface Measurable2D {
-    //Площадь
+    //Площадь объекта
     double measure2D();
 
-    //Периметр
+    //Периметр объекта
     double perimeter();
 
     //класс круг

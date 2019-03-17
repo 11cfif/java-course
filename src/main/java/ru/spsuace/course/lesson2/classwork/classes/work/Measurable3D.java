@@ -9,7 +9,7 @@ package ru.spsuace.course.lesson2.classwork.classes.work;
 
 //Интерфейс, который позволяет измерять объём объектов
 public interface Measurable3D extends Measurable2D {
-    //Объём
+    //Объём объекта
     double measure3D();
 
     //класс шар
