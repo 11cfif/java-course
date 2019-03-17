@@ -1,5 +1,7 @@
 package ru.spsuace.course.lesson2.classwork.classes.work;
 
+import javafx.scene.shape.Circle;
+
 /**
  * Задание:
  * Сделать иерархию классов, в котором можно сделать измерять площадь поверзности, периметр и объем
@@ -27,10 +29,10 @@ public interface Measurable2D {
     double perimeter();
 
     // Квадрат
-    public class Sq implements Measurable2D {
-        protected double a;
+    public class Square implements Measurable2D {
+        public double a;
 
-        Sq(double s) {
+        Square(double s) {
             this.a = a;
         }
 
@@ -46,10 +48,10 @@ public interface Measurable2D {
     }
 
     // Круг
-    public class сircle implements Measurable2D {
-        protected double r;
+    public class Circle implements Measurable2D {
+        public double r;
 
-        сircle(double r) {
+        Circle(double r) {
             this.r = r;
         }
 
@@ -65,10 +67,10 @@ public interface Measurable2D {
     }
 
     //Прямоугольник
-    public class Rect extends Sq implements Measurable2D {
-        protected double b;
+    public class Rectangle extends Square implements Measurable2D {
+        public double b;
 
-        Rect(double a, double b) {
+        Rectangle(double a, double b) {
             super(a);
             this.b = b;
         }
@@ -86,7 +88,7 @@ public interface Measurable2D {
 
     //Прямоугольный треугольник
     public class Triangle implements Measurable2D {
-        protected double a, b;
+        public double a, b;
 
         Triangle(double a, double b) {
             this.a = a;
@@ -110,9 +112,16 @@ public interface Measurable2D {
         double V();
 
         //Шар
-        public class Ball extends сircle implements Measurable3D {
+        public class Ball extends Circle implements Measurable3D {
+
             Ball(double r) {
                 super(r);
+            }
+
+            @Override
+            public double perimeter() {
+                System.out.println("Периметр шара не существует.");
+                return 0;
             }
 
             @Override
@@ -127,7 +136,7 @@ public interface Measurable2D {
         }
 
         //Куб
-        public class Cube extends Sq implements Measurable3D {
+        public class Cube extends Square implements Measurable3D {
             Cube(double a) {
                 super(a);
             }
