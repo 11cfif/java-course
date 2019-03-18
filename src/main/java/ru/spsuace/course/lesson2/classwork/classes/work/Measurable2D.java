@@ -21,7 +21,7 @@ public interface Measurable2D {
         protected double r;
 
         //конструктор
-        Circle(double r) {
+        public Circle(double r) {
             this.r = r;
         }
 
@@ -44,7 +44,7 @@ public interface Measurable2D {
         protected double a;
 
         //конструктор
-        Square(double a) {
+        public Square(double a) {
             this.a = a;
         }
 
@@ -67,7 +67,7 @@ public interface Measurable2D {
         protected double b;
 
         //конструктор
-        Rectangle(double a, double b) {
+        public Rectangle(double a, double b) {
             super(a);
             this.b = b;
         }
@@ -91,7 +91,7 @@ public interface Measurable2D {
         protected double a, b;
 
         //конструктор
-        Triangle90(double a, double b) {
+        public Triangle90(double a, double b) {
             this.a = a;
             this.b = b;
         }

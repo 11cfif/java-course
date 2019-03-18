@@ -15,7 +15,7 @@ public interface Measurable3D extends Measurable2D {
     //класс шар
     public class Ball extends Circle implements Measurable3D {
         //конструктор
-        Ball(double r) {
+        public Ball(double r) {
             super(r);
         }
 
@@ -23,6 +23,12 @@ public interface Measurable3D extends Measurable2D {
         @Override
         public double measure2D() {
             return (4 * Math.PI * Math.pow(r, 3));
+        }
+
+        //периметр шара (которого нет)
+        @Override
+        public double perimeter() throws UnsupportedOperationException {
+            throw new UnsupportedOperationException("Perimeter of the Ball doesn't exist.");
         }
 
         //объём шара
@@ -35,7 +41,7 @@ public interface Measurable3D extends Measurable2D {
     //класс куб
     public class Cube extends Square implements Measurable3D {
         //конструктор
-        Cube(double a) {
+        public Cube(double a) {
             super(a);
         }
 
