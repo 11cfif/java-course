@@ -32,7 +32,7 @@ public interface Measurable2D {
     public class Square implements Measurable2D {
         public double a;
 
-        Square(double s) {
+       public Square(double s) {
             this.a = a;
         }
 
@@ -51,7 +51,7 @@ public interface Measurable2D {
     public class Circle implements Measurable2D {
         public double r;
 
-        Circle(double r) {
+        public Circle(double r) {
             this.r = r;
         }
 
@@ -70,7 +70,7 @@ public interface Measurable2D {
     public class Rectangle extends Square implements Measurable2D {
         public double b;
 
-        Rectangle(double a, double b) {
+        public Rectangle(double a, double b) {
             super(a);
             this.b = b;
         }
@@ -90,7 +90,7 @@ public interface Measurable2D {
     public class Triangle implements Measurable2D {
         public double a, b;
 
-        Triangle(double a, double b) {
+        public Triangle(double a, double b) {
             this.a = a;
             this.b = b;
         }
@@ -114,7 +114,7 @@ public interface Measurable2D {
         //Шар
         public class Ball extends Circle implements Measurable3D {
 
-            Ball(double r) {
+            public Ball(double r) {
                 super(r);
             }
 
@@ -137,7 +137,7 @@ public interface Measurable2D {
 
         //Куб
         public class Cube extends Square implements Measurable3D {
-            Cube(double a) {
+            public Cube(double a) {
                 super(a);
             }
 
