@@ -1,4 +1,4 @@
-package ru.spsuace.course.lesson2.classwork.classes.functionals;
+package ru.spsuace.course.lesson2.classwork.functionals;
 
 import java.io.File;
 import java.io.FileFilter;
