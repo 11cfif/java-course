@@ -3,7 +3,7 @@ package ru.spsuace.course.classwork.classes;
 public class ExtendedClasses {
 
 
-    // ---------- extends ----------
+
     static class SuperClass {
 
         private final String surname;
