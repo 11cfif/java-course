@@ -27,10 +27,10 @@ public class ArraysAndStrings {
 
     }
 
-//    public static void main(String[] args) {
-//        arraysWork(3);
-//        forEachArrays();
-//    }
+    public static void main(String[] args) {
+        arraysWork(11);
+        forEachArrays();
+    }
 
     // ---------- String init ----------
 
