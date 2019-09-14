@@ -48,10 +48,10 @@ public class ExtendedClasses {
     }
 
 //    public static void main(String[] args) {
-//        SuperClass i = new SubClass("Galkin", "Alexander", 27);
-//        System.out.println(i.itIsMe().myName());
-//        System.out.println( ((SubClass)i.itIsMe()).myName("Mr."));
-//    }
+////        SuperClass i = new SubClass("Olkhovsky", "Anton", 27);
+////        System.out.println(i.itIsMe().myName());
+////        System.out.println( ((SubClass)i.itIsMe()).myName("Mr."));
+////    }
 
     // ---------- abstract ----------
 
@@ -118,15 +118,15 @@ public class ExtendedClasses {
 //        pet.say();
 //        System.out.println("return : " + pet.sayAndReturn());
 //        pet.say("Мур ");
-////        pet.kyc();
+//        ((Cat)pet).kyc();
 //
 //        System.out.println("--------------");
 //
 //        Speaking speaking = new Cat("Barsik", 5);
 //        speaking.say();
-////        System.out.println("return : " + speaking.sayAndReturn());
+//        System.out.println("return : " + ((Pet)speaking).sayAndReturn());   // or ((Cat)speaking).sayAndReturn()
 //        speaking.say("Мур ");
-////        speaking.kyc();
+//        ((Cat)speaking).kyc();
 //
 //    }
 
@@ -139,23 +139,23 @@ public class ExtendedClasses {
     }
 
 
-//    public static void main(String[] args) throws InterruptedException {
-//        String str1 = "effectively final";
-//        String str2 = "not final";
-//        anon(new Runnable() {
-//            @Override
-//            public void run() {
-//                System.out.println(str1);
-//                System.out.println("Thread is running");
-////                System.out.println(str2);
-//            }
-//        });
-//        System.out.println(" ----------- ");
-//
-//        anon(ExtendedClasses::printText);
-//        anon(() -> ExtendedClasses.printText(str1, "Thread is running", str2));
-//        str2 = "not final 2";
-//    }
+    public static void main(String[] args) throws InterruptedException {
+        String str1 = "effectively final";
+        String str2 = "now str2 is effectively final too";
+        anon(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println(str1);
+                System.out.println("Thread is running");
+                System.out.println(str2);
+            }
+        });
+        System.out.println(" ----------- ");
+
+        anon(ExtendedClasses::printText);
+        anon(() -> ExtendedClasses.printText(str1, "Thread is running", str2));
+        //str2 = "not final 2";
+    }
 
     private static void printText() {
         System.out.println("effectively final");
