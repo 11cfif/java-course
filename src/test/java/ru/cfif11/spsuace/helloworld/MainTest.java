@@ -1,6 +1,6 @@
 package ru.cfif11.spsuace.helloworld;
 
-import orj.junit.Assert;
+import org.junit.Assert;
 import org.junit.Test;
 
 
