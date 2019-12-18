@@ -1,17 +1,24 @@
 package ru.spsuace.course.classwork.collections;
 
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Iterator;
 
 public class IteratorExample {
 
-    static void forEach(Iterable<String> iterable) {
+    public static void main(String... args) {
+        iterLoop(Arrays.asList("Привет", "Андрей", "!"));
+    }
+
+    static void forEach(Collection<String> iterable) {
         for (String str : iterable) {
             System.out.println(str);
         }
     }
 
-    static void iterLoop(Iterable<String> iterable) {
-        for (Iterator<String> it = iterable.iterator(); it.hasNext(); ) {
+    static void iterLoop(Collection<String> iterable) {
+        Iterator<String> it = null;
+        for (it = iterable.iterator(); it.hasNext(); ) {
             String str = it.next();
             System.out.println(str);
         }

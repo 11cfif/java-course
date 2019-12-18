@@ -1,10 +1,10 @@
 package ru.spsuace.course.classwork.iostreams.log;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-public class Log4jExample {
-    private static final Logger log = LogManager.getLogger(Log4jExample.class);
+public class Slf4jExample {
+    private static final Logger log = LoggerFactory.getLogger(Slf4jExample.class);
 
     public static void main(String[] args) {
         log.debug("Start program");
@@ -16,7 +16,7 @@ public class Log4jExample {
         log.debug("Start maybeException");
         try {
             maybeException();
-        } catch (IllegalStateException e) {
+        } catch (IllegalArgumentException e) {
             log.error("Exception caught ", e);
             System.exit(2);
         }
@@ -30,7 +30,7 @@ public class Log4jExample {
 
     public static void maybeException() {
         double random = Math.random();
-        log.debug("Generated random number: {0}", random);
+        log.debug("Generated random number: {}", random);
         if (random < 0.5) {
             throw new IllegalArgumentException("Invalid phase of the Moon");
         }

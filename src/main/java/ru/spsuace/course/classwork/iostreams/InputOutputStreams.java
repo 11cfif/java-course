@@ -1,6 +1,7 @@
 package ru.spsuace.course.classwork.iostreams;
 
 import java.io.DataInputStream;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -17,6 +18,7 @@ public class InputOutputStreams {
             outputStream.write(buffer, 0, blockSize);
             totalBytes += blockSize;
         } while (blockSize > 0);
+        outputStream.flush();
         return totalBytes;
     }
 

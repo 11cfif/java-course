@@ -78,8 +78,8 @@ public class ArraysAndStrings {
 
     }
 
-//    public static void main(String[] args) {
-//        methodsString();
-//    }
+    public static void main(String[] args) {
+        methodsString();
+    }
 
 }

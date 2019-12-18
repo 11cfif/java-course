@@ -23,9 +23,15 @@ public class PathWork {
     }
 
     public static long filesCount(Path dir) throws IOException {
-//        int count = 0;
+        int count = 0;
         AtomicInteger atomicCount = new AtomicInteger();
         Files.walkFileTree(dir, new SimpleFileVisitor<Path>() {
+
+            public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) {
+                atomicCount.incrementAndGet();
+                return FileVisitResult.CONTINUE;
+            }
+
             @Override
             public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) {
 //                count++;
@@ -35,5 +41,6 @@ public class PathWork {
         });
 //        return count;
         return atomicCount.get();
+//        return 0;
     }
 }

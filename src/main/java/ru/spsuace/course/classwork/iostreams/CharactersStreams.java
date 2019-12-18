@@ -13,10 +13,11 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class CharcatersStreams {
+public class CharactersStreams {
 
     public static void readAndWriteFile(String fileName) throws FileNotFoundException {
-        Reader reader = new InputStreamReader(new FileInputStream(fileName), StandardCharsets.UTF_8);
+        Reader reader = new InputStreamReader(new FileInputStream(fileName),
+                StandardCharsets.UTF_8);
 
         Writer writer = new OutputStreamWriter(new FileOutputStream(fileName), StandardCharsets.UTF_8);
     }
@@ -33,11 +34,19 @@ public class CharcatersStreams {
     }
 
     public static void readFileNew(String fileName) throws IOException {
-        try (BufferedReader reader = Files.newBufferedReader(Paths.get(fileName), StandardCharsets.UTF_8)) {
+        try (BufferedReader reader = Files.newBufferedReader(Paths.get(fileName),
+                StandardCharsets.UTF_8)) {
             String line;
             while ((line = reader.readLine()) != null) {
                 System.out.println(line);
             }
+        }
+    }
+
+    public static void readSmallFileNew(String fileName) throws IOException {
+        for (String line : Files.readAllLines(Paths.get(fileName),
+                StandardCharsets.UTF_8)) {
+            System.out.println(line);
         }
     }
 }

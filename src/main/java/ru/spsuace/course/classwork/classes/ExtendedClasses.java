@@ -31,6 +31,7 @@ public class ExtendedClasses {
             this.age = age;
         }
 
+
         @Override
         public String myName() {
             return super.myName() + " " + age;
@@ -139,23 +140,23 @@ public class ExtendedClasses {
     }
 
 
-//    public static void main(String[] args) throws InterruptedException {
-//        String str1 = "effectively final";
-//        String str2 = "not final";
-//        anon(new Runnable() {
-//            @Override
-//            public void run() {
-//                System.out.println(str1);
-//                System.out.println("Thread is running");
-////                System.out.println(str2);
-//            }
-//        });
-//        System.out.println(" ----------- ");
-//
-//        anon(ExtendedClasses::printText);
-//        anon(() -> ExtendedClasses.printText(str1, "Thread is running", str2));
+    public static void main(String[] args) throws InterruptedException {
+        String str1 = "effectively final";
+        String str2 = "not final";
+        anon(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println(str1);
+                System.out.println("Thread is running");
+//                System.out.println(str2);
+            }
+        });
+        System.out.println(" ----------- ");
+
+        anon(ExtendedClasses::printText);
+        anon(() -> ExtendedClasses.printText(str1, "Thread is running", str2));
 //        str2 = "not final 2";
-//    }
+    }
 
     private static void printText() {
         System.out.println("effectively final");

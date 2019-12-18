@@ -3,6 +3,7 @@ package ru.spsuace.course.classwork.throwable;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Random;
 
 public class ThrowableExample {
 
@@ -28,16 +29,17 @@ public class ThrowableExample {
 
     // ---------- try-catch-finally ----------
 
-//    public static void main(String[] args) {
-//        doSomething(new String[] {"FirstArgument", null, "Argument"});
+    public static void main(String[] args) {
+        doSomething(new String[]{"FirstArgument", null, "Argument"});
+        System.out.println("------");
+//        doSomething(new String[]{"SecondArgument", "", "Argument"});
 //        System.out.println("------");
-//        doSomething(new String[] {"SecondArgument", "", "Argument"});
+//        doSomething(new String[]{"ThirdArgument", "Argument"});
 //        System.out.println("------");
-//        doSomething(new String[] {"ThirdArgument", "Argument"});
-//        System.out.println("------");
-//        doSomething(new String[] {"ForthArgument", "FifthArgument"});
-//    }
+//        doSomething(new String[]{"ForthArgument", "FifthArgument"});
+    }
 
+    static Random rnd = new Random();
 
     public static void doSomething(String[] args) {
         try {
@@ -47,8 +49,8 @@ public class ThrowableExample {
             }
         } catch (ValidationException e) {
             System.out.println(e.getMessage() + ". Please try again");
-            // throw new IllegalArgumentException();
-        } catch (Exception e) {
+            throw new IllegalArgumentException();
+        } catch (Throwable e) {
             System.out.println(e.getClass());
         } finally {
             showResult();
