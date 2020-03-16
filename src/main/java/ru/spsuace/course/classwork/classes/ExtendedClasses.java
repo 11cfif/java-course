@@ -64,6 +64,7 @@ public class ExtendedClasses {
         }
     }
 
+
     public static abstract class Pet implements Speaking {
 
         protected String name;
@@ -77,25 +78,70 @@ public class ExtendedClasses {
         public abstract String sayAndReturn();
     }
 
-    static class Cat extends Pet {
+    static class Cat {
 
-        public Cat(String name, int age) {
-            super(name, age);
+        public static final int MAX_SIZE = 100;
+
+        public static boolean isFakeCat(final Cat cat) {
+            boolean result;
+            cat.rename("Murzik");
+            if (cat.size > MAX_SIZE) {
+                result = true;
+            } else {
+                result = false;
+            }
+            boolean result1 = cat.size > MAX_SIZE;
+            return result;
         }
 
-        @Override
+        private String name;
+        private int age;
+        private final int size;
+
+        public Cat(String name, int age, int size) {
+            this.name = name;
+            this.age = age;
+            this.size = size;
+        }
+
+        public Cat(String name, int size) {
+            this(name, 0, size);
+        }
+
+        public void rename(String name) {
+            this.name = name;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public int getAge() {
+            return age;
+        }
+
+        public boolean isFake() {
+            return size > MAX_SIZE;
+        }
+
+        public Cat compare(Cat otherCat) {
+            if (this.size > otherCat.size) {
+                return this;
+            } else {
+                return otherCat;
+            }
+        }
+
         public String sayAndReturn() {
             String meow = "Meow! ";
             System.out.print(meow);
             return meow;
         }
 
-        @Override
         public void say() {
             System.out.println("Meow!");
         }
 
-        @Override
         public void say(String str) {
             System.out.print(str);
             say();
@@ -104,17 +150,37 @@ public class ExtendedClasses {
         public void kyc() {
             System.out.println("Кусь");
         }
+
+        @Override
+        public String toString() {
+            return "Cat{" +
+                    "name='" + name + '\'' +
+                    ", age=" + age +
+                    ", size=" + size +
+                    '}';
+        }
     }
 
-//    public static void main(String[] args) {
-//        Cat cat = new Cat("Menson", 3);
-//        cat.say();
-//        System.out.println("return : " + cat.sayAndReturn());
-//        cat.say("Мур ");
-//        cat.kyc();
-//
-//        System.out.println("--------------");
-//
+    public static void main(String[] args) {
+        Cat menson = new Cat("Menson", 3, 30);
+        menson.say();
+        System.out.println("return : " + menson.sayAndReturn());
+        menson.say("Мур ");
+        menson.kyc();
+
+        Cat murzik = new Cat("Murzik", 3, 10);
+
+        Cat greater = menson.compare(murzik);
+        System.out.println(greater);
+
+//        System.out.println(menson.getName() + " is fake? " + menson.isFake());
+//        System.out.println(menson.getName() + " is fake? " + menson.isFakeCat(menson));
+//        System.out.println(menson.getName() + " is fake? " + Cat.say());
+
+
+        System.out.println("--------------");
+
+
 //        Pet pet = new Cat("Barsik", 5);
 //        pet.say();
 //        System.out.println("return : " + pet.sayAndReturn());
@@ -128,8 +194,8 @@ public class ExtendedClasses {
 ////        System.out.println("return : " + speaking.sayAndReturn());
 //        speaking.say("Мур ");
 ////        speaking.kyc();
-//
-//    }
+
+    }
 
     // ----------  Anonymous ----------
 
@@ -140,23 +206,23 @@ public class ExtendedClasses {
     }
 
 
-    public static void main(String[] args) throws InterruptedException {
-        String str1 = "effectively final";
-        String str2 = "not final";
-        anon(new Runnable() {
-            @Override
-            public void run() {
-                System.out.println(str1);
-                System.out.println("Thread is running");
-//                System.out.println(str2);
-            }
-        });
-        System.out.println(" ----------- ");
-
-        anon(ExtendedClasses::printText);
-        anon(() -> ExtendedClasses.printText(str1, "Thread is running", str2));
-//        str2 = "not final 2";
-    }
+//    public static void main(String[] args) throws InterruptedException {
+//        String str1 = "effectively final";
+//        String str2 = "not final";
+//        anon(new Runnable() {
+//            @Override
+//            public void run() {
+//                System.out.println(str1);
+//                System.out.println("Thread is running");
+////                System.out.println(str2);
+//            }
+//        });
+//        System.out.println(" ----------- ");
+//
+//        anon(ExtendedClasses::printText);
+//        anon(() -> ExtendedClasses.printText(str1, "Thread is running", str2));
+////        str2 = "not final 2";
+//    }
 
     private static void printText() {
         System.out.println("effectively final");

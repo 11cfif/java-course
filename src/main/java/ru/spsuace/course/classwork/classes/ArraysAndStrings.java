@@ -10,27 +10,31 @@ public class ArraysAndStrings {
         int[] array1 = new int[n];
         int[] array2 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         array1[0] = array2[0] + array2[3];
-        try {
-            int tenElement = array1[array2.length];
-            System.out.println(tenElement);
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("array1.length < " + (array2.length + 1));
-        }
+//        try {
+            int elevenElement = array1[array2.length];
+            System.out.println(elevenElement);
+//        } catch (ArrayIndexOutOfBoundsException e) {
+//            System.out.println("array1.length < " + (array2.length + 1));
+//        }
     }
 
     private static void forEachArrays() {
         int[] array = {3, 5, 7, 3, 7, 3, 9, 3};
         Arrays.sort(array);
-        for (int element : array) {
-            System.out.println(element);
+
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
         }
 
+//        for (int element : array) {
+//            System.out.println(element);
+//        }
     }
 
-//    public static void main(String[] args) {
+    public static void main(String[] args) {
 //        arraysWork(3);
-//        forEachArrays();
-//    }
+        forEachArrays();
+    }
 
     // ---------- String init ----------
 
@@ -78,8 +82,8 @@ public class ArraysAndStrings {
 
     }
 
-    public static void main(String[] args) {
-        methodsString();
-    }
+//    public static void main(String[] args) {
+//        methodsString();
+//    }
 
 }

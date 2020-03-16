@@ -30,7 +30,7 @@ public class AccountManager {
         positive.start();
 
         System.out.println("waiting");
-        account.waitAndWithdraw(5_000_000);
+        account.waitAndWithdraw(50_000_000);
 
         positive.join();
 
@@ -38,7 +38,7 @@ public class AccountManager {
     }
 
     public static void positive(Account account) {
-        for (int i = 0; i < 10_000_000; i++) {
+        for (int i = 0; i < 100_000_000; i++) {
             account.deposit(1);
         }
     }

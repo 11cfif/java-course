@@ -40,24 +40,28 @@ public class MethodsExample {
     public static final void bigMethod(String name, MethodsExample example) throws IOException {
         //doNothing
         print((short)1);
-        print((short)1, 2);
+//        print((short)1, 2);
         print(1d);
     }
 
     //  ---------- Overloading and casting ----------
 
-//    public static void main(String[] args) {
-//        print(123L);
-//        print(123);
-//        print((byte) 123);
-//        print(123F);
-//    }
+    public static void main(String[] args) {
+        print(123L);
+        print(123);
+        print((byte) 123);
+        print(123F);
+        print(123, 123L);
+    }
 
     public static void print(short a) {
         System.out.println("short arg: " + a);
     }
 
-    public static void print(int a, int b) {
+    public static void print(long a, int b) {
+        System.out.println("int arg: " + a + b);
+    }
+    public static void print(int a, double b) {
         System.out.println("int arg: " + a + b);
     }
 
