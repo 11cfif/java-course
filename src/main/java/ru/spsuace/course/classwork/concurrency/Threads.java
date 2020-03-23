@@ -20,7 +20,8 @@ public class Threads {
             long sum = 0;
             for (int i = 0; i < 10_000_000; i++) {
                 sum += Math.sin(i);
-                if (i % 100 == 0 && isInterrupted()) {
+                if (i % 100 == 0 && Thread.currentThread().isInterrupted()) {
+
                     System.out.println("Worker interrupted: i = " + i + ", sum = " + sum);
                     break;
                 }
